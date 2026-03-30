@@ -1,0 +1,299 @@
+/* Apply custom fonts */
+body {
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+h1,
+h2,
+.font-mono,
+#header-title {
+    font-family: 'Orbitron', sans-serif;
+}
+
+#story-text {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+/* Force 16:9 aspect ratio */
+body {
+    background-color: #000;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.aspect-16-9-container {
+    width: 100vw;
+    height: 56.25vw;
+    /* 9/16 = 0.5625 */
+    max-height: 100vh;
+    max-width: 177.78vh;
+    /* 16/9 = 1.7778 */
+    position: relative;
+    overflow: hidden;
+    background-color: #050505;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.animate-shimmer {
+    animation: shimmer 1.5s infinite;
+}
+
+.bg-scanline {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSJ0cmFuc3BhcmVudCIvPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSIxIiBmaWxsPSJyZ2JhKDAsIDAsIDAsIDAuMSkiLz4KPC9zdmc+');
+}
+
+#scene-image {
+    transition: opacity 1.5s ease-in-out, transform 10s linear;
+}
+
+.zoom-effect {
+    transform: scale(1.05);
+}
+
+/* Ending scene animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes badgePulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.65;
+    }
+}
+
+.ending-fade-in {
+    animation: fadeInUp 1.2s ease both;
+}
+
+.ending-badge-pulse {
+    animation: badgePulse 3s ease-in-out infinite;
+}
+
+#ending-badge {
+    transition: opacity 0.8s ease;
+}
+
+/* Hide scrollbar */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+}
+
+/* Screen shake effect */
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-2px, -3px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-4px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(4px, 3px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(2px, -2px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-2px, 3px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-4px, 2px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(4px, 2px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-2px, -2px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(2px, 3px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -3px) rotate(-1deg);
+    }
+}
+
+.effect-shake {
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+}
+
+/* Typewriter cursor */
+.cursor::after {
+    content: '█';
+    animation: blink 1s step-start infinite;
+    color: inherit;
+    margin-left: 4px;
+    opacity: 0.8;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+#boot-screen {
+    transition: opacity 1s ease-out;
+}
+
+/* ------------------------------------------------------------- 
+           Boot Screen Glitch Effect
+           Uses CSS pseudo-elements with offset clip-path slices and
+           RGB color-channel splits at randomized intervals.
+        ------------------------------------------------------------- */
+.glitch {
+    position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: inherit;
+    background: transparent;
+}
+
+.glitch::before {
+    color: rgba(220, 38, 38, 0.75);
+    /* red channel */
+    animation: glitch-before 2.5s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+.glitch::after {
+    color: rgba(6, 182, 212, 0.75);
+    /* cyan channel */
+    animation: glitch-after 2.5s infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch-before {
+
+    0%,
+    88%,
+    100% {
+        transform: translate(0);
+        opacity: 0;
+    }
+
+    90% {
+        transform: translate(-3px, 1px);
+        opacity: 1;
+        clip-path: polygon(0 10%, 100% 10%, 100% 40%, 0 40%);
+    }
+
+    92% {
+        transform: translate(3px, -1px);
+        opacity: 1;
+        clip-path: polygon(0 5%, 100% 5%, 100% 25%, 0 25%);
+    }
+
+    94% {
+        transform: translate(-2px, 2px);
+        opacity: 0.8;
+        clip-path: polygon(0 40%, 100% 40%, 100% 55%, 0 55%);
+    }
+
+    96% {
+        transform: translate(0);
+        opacity: 0;
+    }
+}
+
+@keyframes glitch-after {
+
+    0%,
+    85%,
+    100% {
+        transform: translate(0);
+        opacity: 0;
+    }
+
+    87% {
+        transform: translate(3px, -2px);
+        opacity: 1;
+        clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%);
+    }
+
+    89% {
+        transform: translate(-3px, 1px);
+        opacity: 1;
+        clip-path: polygon(0 70%, 100% 70%, 100% 90%, 0 90%);
+    }
+
+    91% {
+        transform: translate(1px, -1px);
+        opacity: 0.7;
+        clip-path: polygon(0 50%, 100% 50%, 100% 65%, 0 65%);
+    }
+
+    93% {
+        transform: translate(0);
+        opacity: 0;
+    }
+}
+
+/* ------------------------------------------------------------- 
+           Dynamic 4K Resoltion Scaling (Fluid UI)
+           By scaling html font-size at break points, ALL nested Tailwind 
+           rem-based classes scale proportionally, guaranteeing that 
+           w-64, p-4, text-xl etc. look identical in proportion on a 4K 
+           screen as they do on a standard 1080p canvas.
+        ------------------------------------------------------------- */
+@media (min-width: 1536px) {
+    html {
+        /* 0.85vw is approximately perfect 1:1 on a 1920x1080 screen (16/1920 = 0.00833) */
+        font-size: max(16px, min(0.85vw, 1.5vh));
+    }
+}
