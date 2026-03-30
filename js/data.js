@@ -108,21 +108,21 @@ const STORY_DATA = {
     },
     "N9": {
         title: "Full Throttle Escape",
-        image: "images/02.jpg",
+        image: "images/22.jpg",
         text: "You smash the original drive, take a copy, and jump in your car. You speed out of the shelter.",
         effect: "shake",
         choices: [{ text: "Check the rearview mirror.", next: "N11" }]
     },
     "N11": {
         title: "Death on Your Tail",
-        image: "images/02.jpg",
+        image: "images/22.jpg",
         text: "Julian controls the city cameras. Three armored SUVs are right behind you on the highway.",
         theme: "danger",
         choices: [{ text: "Prepare to engage.", next: "N_q5" }]
     },
     "N_q5": {
         title: "Highway War",
-        image: "images/02.jpg",
+        image: "images/22.jpg",
         text: "You use your car's weapons to destroy two SUVs. But now you have no ammo. Your car is smoking. Soldiers surround you.",
         theme: "danger", effect: "shake",
         choices: [{ text: "Out of options. Surrender.", next: "N_q11" }, { text: "I'll never surrender. Hit the self-destruct button.", next: "N_q12" }]
@@ -167,14 +167,14 @@ const STORY_DATA = {
     },
     "N_w16": {
         title: "Uncaged Tiger",
-        image: "images/18.jpg",
+        image: "images/23.jpg",
         text: "You attack the guards, grab a gun, and shoot the driver. The van crashes. You jump out and run toward the old slaughterhouse.",
         theme: "danger", effect: "shake",
         choices: [{ text: "Head to the Old Slaughterhouse.", next: "N_w25" }]
     },
     "N_q12": {
         title: "Detonation",
-        image: "images/12.jpg",
+        image: "images/23.jpg",
         text: "'See you in hell,' you say. You hit the self-destruct button. A massive explosion destroys your car and the soldiers. You are blown into a ditch.",
         theme: "danger", effect: "shake",
         choices: [{ text: "Crawl out of the mud.", next: "N_w3" }]
@@ -301,7 +301,7 @@ const STORY_DATA = {
     "N13": {
         title: "A Fateful Ride",
         image: "images/04.jpg",
-        text: "You jump into the car. The driver is Marcus, a tired older man. You throw bloody money at him. 'Drive. Hide me.'\n\nMarcus sees the money. He needs it for his sick sister. He drives away fast.",
+        text: "You jump into the car. The driver is Marcus, a tired man. You throw bloody money at him. 'Drive. Hide me.'\n\nMarcus sees the money. He needs it for his sick sister. He drives away fast.",
         effect: "shake",
         choices: [{ text: "Go to the police. Give the evidence to the feds.", next: "N14" }, { text: "The cops are dirty. Find the old plant manager in the suburbs.", next: "N15" }]
     },
@@ -340,14 +340,14 @@ const STORY_DATA = {
     },
     "N_h45": {
         title: "A Civilian's Sacrifice",
-        image: "images/12.jpg",
+        image: "images/23.jpg",
         text: "Marcus gets shot. He gives you his car keys. 'Save my sister,' he says. He drives his car into the police cars. The explosion blocks them.",
         theme: "danger", effect: "shake",
         choices: [{ text: "Honor his last wish. Escape this city.", next: "N_h47" }, { text: "Stare into the fire. Let the rage consume you.", next: "N_h48" }]
     },
     "N_h47": {
         title: "A Quiet Exit",
-        image: "images/02.jpg",
+        image: "images/21.jpg",
         text: "You run into the sewers. You can't fight them all.",
         choices: [{ text: "Head to the 7th district.", next: "N_h51" }]
     },
@@ -445,14 +445,14 @@ const STORY_DATA = {
     },
     "N30": {
         title: "The Power of Trust",
-        image: "images/18.jpg",
+        image: "images/21.jpg",
         text: "You give Marcus a weapon. Tess starts a fire. The three of you jump into the sewer as the clinic explodes.",
         theme: "danger", effect: "shake",
         choices: [{ text: "Wading through the sewers...", next: "N33" }]
     },
     "N33": {
         title: "A Choice in the Dark",
-        image: "images/18.jpg",
+        image: "images/21.jpg",
         text: "You are safe in the sewers. The slaughterhouse is nearby.",
         choices: [{ text: "Stop here. Leak the evidence to the media.", next: "N34" }, { text: "The media can't be trusted. We go and shut the valve ourselves.", next: "N35" }]
     },
@@ -484,7 +484,7 @@ const STORY_DATA = {
     },
     "N35": {
         title: "A Job for Our Own Hands",
-        image: "images/18.jpg",
+        image: "images/21.jpg",
         text: "'We must finish this ourselves,' you say. You keep walking toward the bunker.",
         choices: [{ text: "Approaching the core...", next: "N37" }]
     },
